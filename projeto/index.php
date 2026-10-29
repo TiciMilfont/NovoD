@@ -3,63 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
---> endereço html
-    <title>Central de Robôs</title>
+<link rel="stylest" ref  =  "/css/index.css">
+    <title>Robôlândia</title>
 </head>
 <body>
- 
+ <h2> CENTRAL DE ROBÔS</h2>
+
 <form method="POST"> 
     
-<div>nome = Nome; type ="text" ;Nome = "Robô" ;</div>
+<div>
+     <label>Nome do Robô :</label>
+     <input type ="text" name="nome" required> 
+    </div>
+<br></br>
 
-<div>modelo = Modelo ; type ="text" Nome = " " </div>
+<div>
+     <label>Modelo :</label>
+     <selec value type ="text" name="Explorador" required> 
+        <selec value type ="text" name="Engenheiro" required> 
+              <selec value type ="number" name="Defensor" required> 
+    </div>
+<br></br>
 
-<div>nome_operador = Nome; type ="text" Nome = "Robô" </div> 
-
-<button> type = "submit" >Enviar</button>
-
- 
-
---> Impedir cadastro com campos obrigatórios vazios e mostrar mensagem de sucesso ou erro. (usar if)
-
-return $_POST, 
-
--->Definir energia e potência automaticamente conforme o modelo escolhido.
+<div>
+     <label>Nome do Operador :</label><input type ="text" name="nome_operador" required> 
+    </div>
+<br></br>
 
 
+<button> type = "submit" >CADASTRAR ROBÔ</button>
 
 
 </form>                                                     
 
-
-                                                    
+                                                   
 
 </body>
 </html>
 
 <?php
 
- $method [$_SERVER['REQUEST_METHOD'];
+if ( $_SERVER['REQUEST_METHOD'] ==  "POST") {
 
- echo "ok";
+$nome = $_POST ["nome"] ;
+$categoria = $_POST ["categoria"] ;
+$explorador = $_POST ["explorador"] ;
+$engenheiro = $_POST ["engenheiro"] ;
+$defensor = $_POST ["defensor"] ;
+$nome_operador = $_POST ["nome_operador"] ;
 
+
+echo "O robô $nome foi cadastrado com sucesso! Ele pertence ao grupo de $categoria e será operado por $nome_operador.";
+
+}
+
+?>
+
+
+<?php
 
  //• Criar a classe Robo com os atributos nome, modelo, energia e potencia.
- class Robo (){
-  $nome : Nome=" ";
-  echo $nome;
-      
- }
+ //class Robo ();
+ //public function $recarregar { (if $potencia == 200);
+   //  $nova_potencia = $potencia +10;
+ //}
 
 
+ //$explorador => new Robo;
+ //$engenheiro => new Robo;
+ //$defensor => new Robo;
 
- $Explorador => new Robo;
- $Engenheiro => new Robo;
- $Defensor => new Robo;
-
- // class robo extends Explorador ()
-  // class robo extends Engenheiro ()
-   // class robo extends Defensor()
+ // class Robo extends Explorador ();
+  // class Robo extends Engenheiro ();
+   // class Robo extends Defensor();
 
 ?>
 
